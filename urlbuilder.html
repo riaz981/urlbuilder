@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/urlbuilder.css">
+</head>
+<body>
+
+<div class="container">
+  <form id="urlB" action="" >
+    <fieldset>
+      <legend>Url Builder</legend>
+    <div class="form-group">
+      <label for="url">URL <span style="color:red">*</span> </label>
+      <p><em>Enter the URL of your website</em></p>
+      <input type="url" class="form-control" name="url" id="url" placeholder="url" required>
+    </div>
+    <div class="form-group">
+      <label for="campMedium">
+        Campaign Medium <span style="color:red">*</span>
+      </label>
+      <p><em>Select the medium for your campaign below. For web ads, please select 'Display'. For ads and content to be sent through email (whether bulletin or solus), please select 'email'. For social media campaigns on Facebook, Twitter, LinkedIn or Google +, please select 'social'.</em></p>
+      <select name="campMedium" id="campMedium" class="form-control">
+        <option value="email" rel="emailCampaign">email</option>
+        <option value="social" rel="socialCampaign">social</option>
+        <option value="display" rel="displayCampaign">display</option>
+      </select>
+      <div class="form-group">
+        <label for="campSource">
+          Campaign Source <span style="color:red">*</span>
+        </label>
+        <select name="campSource" id="campSource" class="form-control">
+          <option value="lawyersweekly" class="emailCampaign" rel="lawyersweekly">lawyersweekly</option>
+          <option value="Accountants+Daily" class="emailCampaign" rel="AccountantsDaily">Accountants+Daily</option>
+          <option value="AI" class="emailCampaign" rel="AI">AI</option>
+          <option value="FinTech+Business" class="emailCampaign" rel="none">FinTech+Business</option>
+          <option value="InvestorDaily" class="emailCampaign" rel="none">InvestorDaily</option>
+          <option value="SPI" class="emailCampaign" rel="none">SPI</option>
+          <option value="WIP" class="emailCampaign" rel="none">WIP</option>
+          <option value="IFA" class="emailCampaign" rel="none">IFA</option>
+          <option value="Real+Estate+Business" class="emailCampaign" rel="none">Real+Estate+Business</option>
+          <option value="Residential+Property+Manager" class="emailCampaign" rel="none">Residential+Property+Manager</option>
+          <option value="SMSFAdviser" class="emailCampaign" rel="none">SMSFAdviser</option>
+          <option value="The+Adviser" class="emailCampaign" rel="none">The+Adviser</option>
+          <option value="facebook" class="socialCampaign" rel="none">facebook</option>
+          <option value="twitter" class="socialCampaign" rel="none">twitter</option>
+          <option value="linkedin" class="socialCampaign" rel="none">linkedin</option>
+          <option value="plus.google.com" class="socialCampaign" rel="none">plus.google.com</option>
+          <option value="accountantsdaily.com.au" class="displayCampaign" rel="accountantsdailycomau">accountantsdaily.com.au</option>
+          <option value="mortgagebusiness.com.au" class="displayCampaign" rel="mortgagebusinesscomau">mortgagebusiness.com.au</option>
+          <option value="ifa.com.au" class="displayCampaign" rel="ifacomau">ifa.com.au</option>
+          <option value="investordaily.com.au" class="displayCampaign" rel="investordailycomau">investordaily.com.au</option>
+          <option value="fintechbusiness.com.au" class="displayCampaign" rel="fintechbusinesscomau">fintechbusiness.com.au</option>
+          <option value="riskadviser.com.au" class="displayCampaign" rel="riskadvisercomau">riskadviser.com.au</option>
+          <option value="smsfadviseronline.com.au" class="displayCampaign" rel="smsfadviseronlinecomau">smsfadviseronline.com.au</option>
+          <option value="rebonline.com.au" class="displayCampaign" rel="rebonlinecomau">rebonline.com.au</option>
+          <option value="rpmonline.com.au" class="displayCampaign" rel="none">rpmonline.com.au</option>
+          <option value="smartpropertyinvestment.com.au" class="displayCampaign" rel="none">smartpropertyinvestment.com.au</option>
+          <option value="whichinvestmentproperty.com.au" class="displayCampaign" rel="none">whichinvestmentproperty.com.au</option>
+          <option value="adviserinnovation.com.au" class="displayCampaign" rel="none">adviserinnovation.com.au</option>
+          <option value="lawyersweekly.com.au" class="displayCampaign" rel="none">lawyersweekly.com.au</option>
+          <option value="theadviser.com.au" class="displayCampaign" rel="none">theadviser.com.au</option>
+          <option value="mybusiness.com.au" class="displayCampaign" rel="none">mybusiness.com.au</option>
+          <option value="nestegg.com.au" class="displayCampaign" rel="none">nestegg.com.au</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="campContent">
+          Campaign Content (optional)
+        </label>
+        <p><em>For email or web ads, you have the option of adding ad type to your url. Select the relevant Campaign Content.</em></p>
+        <select name="campContent" id="campContent" class="form-control">
+          <option value="none" class="none">none</option>
+          <option value="tower" class="lawyersweekly" selected>tower</option>
+          <option value="banner" class="AccountantsDaily">banner</option>
+          <option value="native" class="AI">native</option>
+          <option value="leaderboard" class="accountantsdailycomau">leaderboard</option>
+          <option value="skin" class="mortgagebusinesscomau">skin</option>
+          <option value="popup" class="ifacomau">popup</option>
+          <option value="MREC" class="investordailycomau">MREC</option>
+          <option value="super+banner" class="fintechbusinesscomau">super+banner</option>
+          <option value="newsbanner" class="riskadvisercomau">newsbanner</option>
+          <option value="m+newsbanner" class="smsfadviseronlinecomau">m+newsbanner</option>
+          <option value="m+popup" class="rebonlinecomau">m+popup</option>
+        </select>
+    <div class="form-group">
+      <label for="campName">
+        Campaign Name <span style="color:red">*</span>
+      </label>
+      <p><em>Set a campaign name. This could refer to a product, promo, or marketing slogan.</em></p>
+      <input type="text" name="campName" id="campName" class="form-control">
+    </div>
+    <input type="button" class="btn btn-default" id="submit" onclick="myFunction()" value="Submit">
+    </fieldset>
+  </form>
+  <div id="yourUrl">
+    <h3>Your url:</h3> <div id="realUrl"></div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function(){
+    var $cat = $('select[name=campMedium]'),
+        $items = $('select[name=campSource]'),
+        $content = $('select[name=campContent]');
+
+
+    $cat.change(function(){
+        var $this = $(this).find(':selected'),
+            rel = $this.attr('rel'),
+            $set = $items.find('option.' + rel);
+            var something="";
+            $('#urlB input:text').each(
+              function(){
+                  something = $(this).attr('value',$(this).val());
+              });
+
+            console.log(JSON.stringify(something));
+
+        if ($set.size() < 0) {
+            $items.hide();
+            return;
+        }
+        $items.show().find('option').hide();
+        $set.show().first().prop('selected', true);
+        var $this = $('select[name=campSource]').find(':selected'),
+              rel = $this.attr('rel'),
+              $set = $content.find('option.' + rel);
+
+          if ($set.size() < 0) {
+              $content.hide();
+              return;
+          }
+          //$content.show().find('option').hide();
+          //$set.show().first().prop('selected', true);
+    });
+    /*
+    $items.change(function(){
+        var $this = $(this).find(':selected'),
+            rel = $this.attr('rel'),
+            $set = $content.find('option.' + rel);
+        if ($set.size() < 0) {
+            $content.hide();
+            return;
+        }
+        $content.show().find('option').hide();
+        $set.show().first().prop('selected', true);
+    });
+    */
+});
+
+  function myFunction() {
+    if(document.getElementById("url").value==""){
+          alert("Please enter a url!");
+          return;
+        }
+    if(document.getElementById("campName").value==""){
+            alert("Please enter a campaign name!");
+            return;
+      }
+        var url = document.getElementById("url").value;
+        var changedUrl = url.replace(/\/$/, "");
+        var campMedium="&utm_medium="+document.getElementById("campMedium").value;
+        var campSource="?utm_source="+document.getElementById("campSource").value;
+        var campName="&utm_campaign="+document.getElementById("campName").value;
+        var campContent="&utm_content="+document.getElementById("campContent").value;
+        var mainUrl="";
+        if(campContent!=="&utm_content=none"){
+          mainUrl = changedUrl+campSource+campMedium+campContent+campName;
+          document.getElementById("realUrl").innerHTML = mainUrl;
+        }
+        else if(campContent==="&utm_content=none"){
+          mainUrl = changedUrl+campSource+campMedium+campName;
+          document.getElementById("realUrl").innerHTML = mainUrl;
+        }
+        else{
+          mainUrl = changedUrl+campSource+campMedium+campContent+campName;
+          document.getElementById("realUrl").innerHTML = mainUrl;
+        }
+  }
+  //-RH
+</script>
+</body>
+</html>
